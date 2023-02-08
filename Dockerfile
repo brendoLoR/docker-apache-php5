@@ -8,8 +8,8 @@ libtidy-dev libcurl4-openssl-dev libz-dev libmemcached-dev libxslt-dev
 
 RUN a2enmod rewrite
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
-RUN docker-php-ext-enable mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+RUN docker-php-ext-install mysql mysqli pdo pdo_mysql
+RUN docker-php-ext-enable mysql mysqli pdo pdo_mysql
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
 RUN docker-php-ext-install gd
